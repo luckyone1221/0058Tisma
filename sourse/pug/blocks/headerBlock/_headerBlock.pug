@@ -1,10 +1,31 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
+		+pic('headerBl-img.png')(class="headerBlock__img")
+		+e.bot-bg
 		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
-
-			.row
-						
+			+e.row.row
+				.col-lg-6
+					+b.section-title
+						h1
+							span Кухни любой сложности
+							span.twisted под ключ
+							span от производителя
+						p
+							| Составляем смету, разрабатываем дизайн,
+							|
+							br.d-lg-block.d-none
+							| изготавливаем по ТЗ и устанавливаем в дом.
+						+e.btn(href='#') Рассчитайте кухню
+			+e.f-row.row
+				+headerBlockItem()
+				+headerBlockItem()
+				+headerBlockItem()
+				+headerBlockItem()
 	// end headerBlock
+
+mixin headerBlockItem()
+	.col-sm-6.col-lg-3
+		+e.item
+			+e.i-row.row
+				block
