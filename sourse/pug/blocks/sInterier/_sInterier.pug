@@ -1,0 +1,57 @@
+mixin sInterier(data)
+	// start sInterier
+	+b.SECTION.sInterier.section#sInterier&attributes(attributes)
+		+b.section-title-alt
+			.container
+				+e.row.row.align-items-center.gy-3
+					+e.title-col.col-lg-7.col-xl-8.col-xxl-auto
+						h2 Выберите интересующий интерьер
+					.col-md-8.col-lg
+						+e.descr
+							| Мы рассчитаем стоимость и сроки, в течении
+							|
+							br.d-lg-block.d-none
+							| дня Вы получите ответ на почту / телефон.
+		.container
+			+e.row.row
+				.col-md-8.col-lg-6
+					+e.item--big
+						+pic(`sInterier-1`)(class="sInterier__pic")
+						+e.content
+							+e.ball(href="#")
+								+e.name
+									| Кухня с мраморной
+									br
+									| отделкой
+							+e.calc-btn(href='#') Рассчитать стоимость
+				+sInterierItem(2, 'col-sm-6 col-md-4')
+					| Классические
+					br
+					| кухни
+				+sInterierItem(3, 'col-sm-6 col-md-4')
+					| Компактные
+					br
+					| кухни
+				+sInterierItem(4, 'col-sm-6 col-md-4')
+					| Нестандартные
+					br
+					| решения
+				+sInterierItem(5, 'col-sm-6 col-md-4')
+					| Кухни со
+					br
+					| столом-островом
+				+sInterierItem(6, 'col-sm-6')
+					| Кухонные гарнитуры
+				+sInterierItem(7, 'col-sm-6')
+					| Барные стойки
+
+	// end sInterier
+
+mixin sInterierItem(imgNum, bootClasses)
+	+e.col--sm.col-lg-3(class=bootClasses)
+		+e.item
+			+pic(`sInterier-${imgNum}`, undefined, 0)(class="sInterier__pic")
+			+e.content
+				+e.ball(href="#")
+					+e.name
+						block

@@ -543,3 +543,24 @@ iframe {
 
 	box-shadow: 0px 3px 0px #8C9744;
 }
+
+h1, h2{
+	font-size: rem(23);
+	@include media-breakpoint-up(xl){
+		font-size: rem(36);
+	}
+}
+
+.btn-white{
+	@extend .btn;
+	@extend .btn-light;
+
+	padding: rem(16) rem(24);
+	font-family: $mono;
+	font-weight: 600;
+	font-size: rem(15);
+	line-height: (20/15);
+	text-transform: uppercase;
+
+	color: $gray-720;
+}

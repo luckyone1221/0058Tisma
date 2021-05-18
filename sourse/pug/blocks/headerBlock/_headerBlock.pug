@@ -1,11 +1,10 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
-		+pic('headerBl-img.png')(class="headerBlock__img")
 		+e.bot-bg
 		.container
 			+e.row.row
-				.col-lg-6
+				.col-md-8.col-lg-7.col-xl-6
 					+b.section-title
 						h1
 							span Кухни любой сложности
@@ -17,15 +16,57 @@ mixin headerBlock()
 							br.d-lg-block.d-none
 							| изготавливаем по ТЗ и устанавливаем в дом.
 						+e.btn(href='#') Рассчитайте кухню
+			+e.img-cont.d-none.d-md-block
+				+e.white-txt--1.d-none.d-md-block Используем только качественное оборудование.
+				+e.white-txt--2.d-none.d-md-block Подберем материалы на&nbsp;любой бюджет и вкус.
+				+pic('headerBl-img.png')(class="headerBlock__img")
 			+e.f-row.row
 				+headerBlockItem()
+					+e.col--1.col-auto
+						+e.ball
+							+e.number 149
+					.col
+						+e.txt
+							| Выполненных
+							br
+							| проектов с 2010 года.
 				+headerBlockItem()
+					+e.col--2.col-auto
+						+e.ball
+							+e.number 25
+					.col
+						+e.txt
+							| 25 тыс. руб.
+							br
+							strong
+								| минимальная стоимость
+								|
+							| кухни
 				+headerBlockItem()
+					+e.col--3.col-auto
+						+e.ball
+							+e.number 7
+					.col
+						+e.txt
+							strong
+								| от 7 дней
+								|
+							br
+							| на производство кухни
 				+headerBlockItem()
+					+e.col--4.col-auto
+						+e.ball-img
+							img(loading="lazy" src="img/@2x/ball-img2.png" alt="")
+					.col
+						+e.free Бесплатно
+						+e.txt
+							| выезд замерщика
+							br
+							| и разработка проекта.
 	// end headerBlock
 
 mixin headerBlockItem()
-	.col-sm-6.col-lg-3
+	.col-md-6.col-lg-3
 		+e.item
-			+e.i-row.row
+			+e.i-row.row.gy-3
 				block

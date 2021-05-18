@@ -1,0 +1,46 @@
+mixin sKnow(data)
+	// start sKnow
+	+b.SECTION.sKnow.section#sKnow&attributes(attributes)
+		+b.section-title-alt
+			.container
+				+e.row.row.align-items-center.gy-3
+					+e.title-col.col-lg-7.col-xl-8.col-xxl-auto
+						h2 Узнайте стоимость будущей кухни
+					.col-md-8.col-lg
+						+e.descr
+							| Ответь на 6 вопросов и получи расчет на почту
+							br.d-lg-block.d-none
+							| +10% скидку
+		.container
+			+e.main-row.row
+				+e.steps-col.col-xl-auto
+				+e.baners-col.col
+					+e.b-row.row
+						+sKnowCard(1)
+							| Расчет стоимости
+							|
+							br.d-none.d-xxl-block
+							| в 2х ценовых вариантах.
+						+sKnowCard(2)
+							| Выезд замерщика
+							|
+							br.d-none.d-xxl-block
+							| и разработка проекта.
+						.col-xl-12
+							+e.baner
+								+pic('sKnow-baner-img.png', undefined, 0)(class="sKnow__b-img")
+								+e.b-content
+									+e.b-ball
+										+e.discont-txt Ваша скидка
+										+e.discont-val 5%
+									+e.b-txt С каждым отвеченным вопросом Вы экономите время специалистов, и получаете скидку.
+								//-
+	// end sKnow
+
+mixin sKnowCard(imgNum)
+	.col-xl-6
+		+e.card
+			+e.c-ball
+				+pic(`sKnow-card-img-${imgNum}`, undefined, 0)(class="sKnow__c-img")
+			+e.c-txt
+				block

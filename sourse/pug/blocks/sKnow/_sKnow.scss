@@ -1,0 +1,135 @@
+// start .sKnow
+.sKnow {
+	--sPB: #{rem(36)};
+	--sPT: #{rem(36)};
+
+	.section-title-alt{
+		margin-bottom: rem(25);
+		@include media-breakpoint-up(xl){
+			margin-bottom: rem(36);
+		}
+	}
+
+	&__main-row{}
+	&__steps-col{
+
+		@include media-breakpoint-up(xl){
+			width: 62%;
+		}
+	}
+	&__baners-col{
+
+	}
+	&__b-row{
+		@include roww(15px);
+		--bs-gutter-y: 12px;
+	}
+
+	//
+	&__card{
+		min-height: 100%;
+		background: $gray-110;
+		border-radius: 2px;
+
+		padding: rem(48) rem(30);
+		@include media-breakpoint-up(xxl){
+			padding: rem(48) rem(40);
+		}
+	}
+	&__c-ball{
+		width: rem(135);
+		height: rem(135);
+		border-radius: 50%;
+		margin: 0 auto rem(32) auto;
+		position: relative;
+		background: $green2;
+	}
+	&__c-img{
+		position: absolute;
+		width: rem(205);
+		height: rem(171);
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		img{
+			width: auto;
+			height: auto;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+	&__c-txt{
+		font-family: $mono;
+		line-height: 1.5;
+		text-align: center;
+		color: $black;
+	}
+
+	&__baner{
+		width: 100%;
+		height: 224px;
+		border-radius: 2px;
+		overflow: hidden;
+
+		position: relative;
+	}
+	&__b-img{
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	&__b-content{
+		padding: rem(12);
+	}
+	&__b-ball{
+		margin-left: rem(67);
+
+		width: rem(116);
+		height: rem(116);
+		border-radius: 50%;
+		background: $white;
+
+		padding: rem(13) rem(14);
+
+		position: relative;
+
+		margin-bottom: 23px;
+	}
+	&__discont-txt{
+		font-family: $mono2;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: (16/14);
+		text-align: center;
+		color: $green7;
+	}
+	&__discont-val{
+		font-weight: bold;
+		font-size: rem(96);
+		line-height: (117/96);
+		color: $green9;
+
+		position: absolute;
+		top: 29px;
+		right: 17px;
+	}
+	//
+	&__b-txt{
+		font-family: $mono;
+		max-width: 172px;
+
+		font-size: 10px;
+		color: $green8;
+		margin-left: 25px;
+	}
+	&__{}
+	&__{}
+} // end.sKnow

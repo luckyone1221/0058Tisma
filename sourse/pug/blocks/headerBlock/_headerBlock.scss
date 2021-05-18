@@ -1,8 +1,12 @@
 // start .headerBlock
 .headerBlock {
-	--sPT: #{rem(190)};
+	--sPT: #{rem(120)};
+	--sTPB: #{rem(40)};
+	@include media-breakpoint-up(md){
+		--sPT: #{rem(190)};
+		--sTPB: #{rem(82)};
+	}
 	--sPB: #{rem(0)};
-	--sTPB: #{rem(78)};
 
 	min-height: 600px;
 	background-color: $gray-980;
@@ -10,7 +14,7 @@
 
 	position: relative;
 	z-index: 1;
-	&__img{
+	&__img-cont{
 		position: absolute;
 		z-index: -1;
 		top: 0;
@@ -19,7 +23,48 @@
 		width: 100%;
 		max-width: 1350px;
 		height: 600px;
+	}
+	&__white-txt{
+		position: absolute;
 
+		background: rgba($white, 0.7);
+		border: 1px solid rgba($white, 0.5);
+		box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.25);
+		backdrop-filter: blur(4px);
+		border-radius: 4px;
+		padding: 8px 16px;
+
+		font-family: $mono;
+		color: rgba(0, 0, 0, 0.68);
+		font-size: 12px;
+		line-height: (16/12);
+
+		&--1{
+			top: 300px;
+
+			right: 30px;
+			@include media-breakpoint-up(lg){
+				right: 132px;
+			}
+			width: 233px;
+		}
+		&--2{
+			width: 181px;
+
+			right: 70px;
+			@include media-breakpoint-up(lg){
+				right: 300px;
+			}
+			@include media-breakpoint-up(xl){
+				right: 430px;
+			}
+			top: 427px;
+		}
+	}
+
+	&__img{
+		width: 100%;
+		height: 100%;
 		img{
 			width: 100%;
 			height: 100%;
@@ -48,6 +93,7 @@
 		}
 		&:after{
 			left: 0;
+			top: -1px;
 			width: 100%;
 			height: 100%;
 			background-color: $gray-980;
@@ -79,29 +125,162 @@
 					position: absolute;
 					z-index: -1;
 					background-color: $white;
-					width: calc(100% + 17px *2);
-					left: -17px;
-					height: calc(100% + 6px);
-					top: -3px;
+
+					top: -2px;
+					left: -8px;
+					width: calc(100% + 8px *2);
+					height: calc(100% + 4px);
+					@include media-breakpoint-up(sm){
+						top: -3px;
+						left: -17px;
+						width: calc(100% + 17px *2);
+						height: calc(100% + 6px);
+					}
+
 					transform: rotate(-1.02deg);
 				}
 			}
 		}
 
 		p{
-			font-size: rem(18);
 			line-height: (22/18);
 
 			color: $white;
-			margin-bottom: rem(58);
+			margin-bottom: rem(30);
+			@include media-breakpoint-up(md){
+				margin-bottom: rem(58);
+				font-size: rem(18);
+			}
 		}
 
 		&__btn{
 			@extend .btn-default;
 		}
 	}
-	&__{}
-	&__{}
+
+	//
+	&__f-row{
+		@include roww(16px);
+		--bs-gutter-y: 16px;
+
+		position: relative;
+
+		@include media-breakpoint-up(lg){
+			height: 100px;
+		}
+		@include media-breakpoint-up(xl){
+			height: 0;
+		}
+	}
+	&__item{
+		min-height: 100%;
+		font-size: 15px;
+		line-height: 20px;
+
+		color: $gray-965;
+
+		padding: rem(24) rem(24) rem(24) rem(40);
+		@include media-breakpoint-up(xxl){
+			padding: rem(21) rem(24);
+		}
+
+		background: $white;
+		box-shadow: 0px 0px rem(34) rgba(0, 0, 0, 0.25);
+		border-radius: 4px;
+	}
+	&__i-row{
+		@include roww(24px);
+	}
+	&__col{
+		&--1{
+			padding-right: 3px;
+
+			.headerBlock__ball{
+				@include media-breakpoint-up(xxl){
+					margin-left: 36px;
+				}
+			}
+			.headerBlock__number{
+				position: relative;
+				top: -8px;
+				left: -35px;
+			}
+		}
+		&--2{
+			.headerBlock__ball{
+				@include media-breakpoint-up(xxl){
+					margin-left: 16px;
+				}
+			}
+			.headerBlock__number{
+				position: relative;
+				top: -8px;
+				left: -8px;
+			}
+		}
+		&--3{
+			.headerBlock__ball{
+				@include media-breakpoint-up(xxl){
+					margin-left: 9px;
+				}
+			}
+			.headerBlock__number{
+				position: relative;
+				top: -7px;
+				left: 3px;
+			}
+		}
+		&--4{}
+	}
+	&__ball{
+		width: 55px;
+		height: 55px;
+		border-radius: 50%;
+		background-color: $green3;
+
+		position: relative;
+	}
+	&__number{
+		font-family: $mono2;
+		font-weight: bold;
+		font-size: rem(48);
+		line-height: (55/48);
+
+		color: $gray-965;
+
+	}
+	&__ball-img{
+		@include media-breakpoint-up(xxl){
+			margin-left: 5px;
+		}
+	}
+	&__txt{
+		font-family: $mono;
+	}
+	&__free{
+		display: inline-block;
+
+		font-weight: bold;
+		line-height: (20/15);
+		text-transform: uppercase;
+		color: $green4;
+
+		position: relative;
+		z-index: 1;
+		&:before{
+			content: '';
+			position: absolute;
+			z-index: -1;
+			top: -2px;
+			left: -7px;
+			height: calc(100% + 4px);
+			width: calc(100% + 14px);
+
+			background: $green5;
+			border-radius: 2px;
+			transform: rotate(-1.27deg);
+		}
+	}
 	&__{}
 	&__{}
 }
