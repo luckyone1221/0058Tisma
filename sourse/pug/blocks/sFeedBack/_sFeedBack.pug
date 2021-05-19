@@ -1,0 +1,59 @@
+mixin sFeedBack(data)
+	// start sFeedBack
+	+b.SECTION.sFeedBack.section#sFeedBack&attributes(attributes)
+		.container
+			+e.row.row.gy-4
+				+e.txt-col.col-xl-5.col-xxl-auto
+					+b.section-title
+						h2 Отзывы наших&#160;клиентов
+						p Если Вы все еще сомневаетесь в качестве выполненния нашей работы, прочитайте реальные отзывы, оставленные нашими клиентами.
+					+e.sub-row.row
+						.col
+							+e.amount-cont
+								+e.amount 140+
+								+e.amount-txt клиентов с 2010 года.
+							+e.rate
+								img(loading="lazy" src="img/@2x/yandex-rate.png" alt="")
+						+e.arrow-col.col-sm-auto
+							+e.arrow.sFeedBack-prev-js.mb-sm-12
+								+e.icon.mb-2
+									img(loading="lazy" src="img/svg/arrow-left.svg" alt="")
+								+e.a-txt Предыдущий
+							+e.arrow.sFeedBack-next-js
+								+e.a-txt.mb-2 Следующий
+								+e.icon
+									img(loading="lazy" src="img/svg/arrow-right.svg" alt="")
+				+e.slider-col.col-xl-7.col-xxl
+					+e.slider-wrap
+						.swiper-container.sFeedBack-slider-js
+							.swiper-wrapper
+								+sFeedBackSlide()
+								+sFeedBackSlide()
+								+sFeedBackSlide()
+	// end sFeedBack
+
+mixin sFeedBackSlide()
+	.swiper-slide
+		+e.card
+			+e.card-row.row.gy-4
+				+e.c-data-col.col-sm-auto
+					+e.name-row.row
+						.col-auto
+							+e.portrait
+								img(loading="lazy" src="img/@2x/feedback-img.jpg" alt="")
+						.col
+							+e.name Екатерина М.
+							+e.date 10.10.2020
+					+e.video-link(href="#")
+						+e.ball
+							img(loading="lazy" src="img/video-link.png" alt="")
+						+e.v-txt
+							| Посмотреть
+							br
+							| видео отзыв
+					+e.pic-cont
+						+pic('feedback-pic.jpg', undefined, 0)(class="sFeedBack__picture")
+				+e.c-txt-col.col-sm
+					p В восторге от кухни, которую нам сделала компания TISMA. Вообще, в целом понравилось взаимодействие с компанией. После заявки на следующий день приехал замерщик, а уже потом менеджер помог определиться с кухней. Удобно, что с помощью специальной программы сделали идеальный вариант размещения ящичков и места под встраиваемую технику. После дали обширную консультацию по брендам фурнитуры, рассказал про качество и подобрал несколько выгодных решений по соотношению цены-качества.
+					p Стоимость устроила, со скидкой получилось даже меньше чем мы предполагали потратить.
+					p За свои деньги кухня получилась просто великолепной!

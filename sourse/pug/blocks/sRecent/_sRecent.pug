@@ -1,0 +1,38 @@
+mixin sRecent(data)
+	// start sRecent
+	+b.SECTION.sRecent.section#sRecent&attributes(attributes)
+		.container
+			+b.section-title.d-xl-none
+				h2 Наши крайние проекты
+				p Самое свежее, мы публикуем в наших соцсетях
+			+e.main-row.row
+				+e.col--title.col-sm-6.col-lg-3
+					+b.section-title.d-none.d-xl-block
+						h2 Наши крайние проекты
+						p Самое свежее, мы публикуем в наших соцсетях
+					+e.links-box
+						+e.l-row.row.align-items-center.gy-3
+							.col-auto
+								+e.ball-logo
+									img(loading="lazy" src="img/@2x/ball-logo.png" alt="")
+							.col-auto
+								+e.soc-links
+									+sRecentSocLink('instagram', 'tisma_mebel')
+									+sRecentSocLink('facebook', 'tismamebel')
+									+sRecentSocLink('vk', 'tismamebel')
+									+sRecentSocLink('ok', 'tismamebel')
+				+sRecentWorkItem(1)
+				+sRecentWorkItem(2)
+				+sRecentWorkItem(3)
+	// end sRecent
+
+mixin sRecentWorkItem(imgNum)
+	+e.col.col-sm-6.col-lg-3
+		+pic(`sRecent-work-${imgNum}`, undefined, 0)(class="sRecent__work-link")
+
+
+mixin sRecentSocLink(imgName, txt)
+	+e.link(href='#')
+		+e.icon
+			img(loading="lazy" src=`img/svg/${imgName}.svg` alt="")
+		+e.txt=txt

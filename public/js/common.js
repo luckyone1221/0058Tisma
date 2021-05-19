@@ -334,7 +334,16 @@ function eventHandler() {
 		freeModeMomentum: true
 	})); // modal window
 	//luckyone Js
-	//end luckyone Js
+
+	let sFeedBackSlider = new Swiper('.sFeedBack-slider-js', {
+		loop: true,
+		slidesPerView: 'auto',
+		spaceBetween: 34,
+		navigation: {
+			nextEl: '.sFeedBack-next-js',
+			prevEl: '.sFeedBack-prev-js'
+		}
+	}); //end luckyone Js
 }
 
 ;

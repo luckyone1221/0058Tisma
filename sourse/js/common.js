@@ -328,11 +328,20 @@ function eventHandler() {
 		touchRatio: 0.2,
 		slideToClickedSlide: true,
 		freeModeMomentum: true,
-
 	});
 	// modal window
 
 	//luckyone Js
+	let sFeedBackSlider = new Swiper('.sFeedBack-slider-js', {
+		loop: true,
+		slidesPerView: 'auto',
+		spaceBetween: 34,
+
+		navigation: {
+			nextEl: '.sFeedBack-next-js',
+			prevEl: '.sFeedBack-prev-js',
+		},
+	});
 
 	//end luckyone Js
 

@@ -1,6 +1,6 @@
 // start .sKnow
 .sKnow {
-	--sPB: #{rem(36)};
+	--sPB: #{rem(55)};
 	--sPT: #{rem(36)};
 
 	.section-title-alt{
@@ -10,11 +10,13 @@
 		}
 	}
 
-	&__main-row{}
+	&__main-row{
+		@include roww(16px);
+	}
 	&__steps-col{
 
 		@include media-breakpoint-up(xl){
-			width: 62%;
+			width: 62.5%;
 		}
 	}
 	&__baners-col{
@@ -31,16 +33,24 @@
 		background: $gray-110;
 		border-radius: 2px;
 
-		padding: rem(48) rem(30);
+		padding: rem(24) rem(30);
+		@include media-breakpoint-up(xl){
+			padding: rem(48) rem(30);
+		}
 		@include media-breakpoint-up(xxl){
 			padding: rem(48) rem(40);
 		}
 	}
 	&__c-ball{
-		width: rem(135);
-		height: rem(135);
+		width: rem(120);
+		height: rem(120);
+		margin: 0 auto rem(20) auto;
+		@include media-breakpoint-up(xl){
+			width: rem(135);
+			height: rem(135);
+			margin: 0 auto rem(32) auto;
+		}
 		border-radius: 50%;
-		margin: 0 auto rem(32) auto;
 		position: relative;
 		background: $green2;
 	}
@@ -72,7 +82,7 @@
 
 	&__baner{
 		width: 100%;
-		height: 224px;
+		min-height: #{'max(100%, #{224px})'};
 		border-radius: 2px;
 		overflow: hidden;
 
@@ -85,12 +95,21 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
+
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 	&__b-content{
 		padding: rem(12);
 	}
 	&__b-ball{
-		margin-left: rem(67);
+		margin-left: rem(40);
+		@include media-breakpoint-up(sm){
+			margin-left: rem(67);
+		}
 
 		width: rem(116);
 		height: rem(116);
@@ -128,8 +147,441 @@
 
 		font-size: 10px;
 		color: $green8;
-		margin-left: 25px;
+
+		@include media-breakpoint-up(sm){
+			margin-left: rem(25);
+		}
 	}
 	&__{}
 	&__{}
 } // end.sKnow
+
+.quize{
+	&__header-row{
+		@include roww(12px);
+		--bs-gutter-y: 12px;
+		@include media-breakpoint-up(xxl){
+			@include roww(15px);
+			--bs-gutter-y: 15px;
+		}
+
+		padding-bottom: rem(15);
+	}
+	&__step{
+		@include mt();
+		width: 100%;
+		padding: 15px 5px;
+		background: $gray-110;
+		text-align: center;
+
+		font-family: $mono;
+		font-size: 14px;
+		line-height: (19/14);
+
+		color: $gray-620;
+
+		&.active{
+			color: $green10;
+
+			background: $green2;
+			box-shadow: 0px 1px 0px $green11;
+		}
+	}
+	&__body{
+
+	}
+	&__card{
+		background: $white;
+		box-shadow: 0px 0px 34px rgba(0, 0, 0, 0.25);
+		border-radius: rem(16);
+
+
+		padding: rem(32) rem(16);
+		@include media-breakpoint-up(sm){
+			padding: rem(32);
+		}
+		@include media-breakpoint-up(xl){
+			min-height: rem(504);
+			padding: rem(30);
+		}
+		@include media-breakpoint-up(xxl){
+			padding: 36px 32px 34px 32px;
+		}
+		display: flex;
+		flex-direction: column;
+	}
+	&__title{
+		display: inline-block;
+		font-weight: bold;
+		line-height: (29/24);
+
+		font-size: rem(18);
+		@include media-breakpoint-up(sm){
+			font-size: rem(20);
+		}
+		@include media-breakpoint-up(xl){
+			font-size: rem(24);
+		}
+		text-align: center;
+
+		margin-bottom: rem(34);
+
+		position: relative;
+		z-index: 1;
+		&:before{
+			content: '';
+			position: absolute;
+			z-index: -1;
+			bottom: -4px;
+			left: 0;
+			width: 100%;
+			height: rem(15);
+			background: $green11;
+		}
+	}
+	&__content{
+		padding-bottom: rem(40);
+		@include media-breakpoint-up(xl){
+			padding-bottom: rem(10);
+		}
+	}
+	&__content-row{
+		@include roww(16px);
+		@include media-breakpoint-up(lg){
+			@include roww(40px);
+		}
+		@include media-breakpoint-up(xl){
+			@include roww(24px);
+		}
+	}
+	&__f-row{
+		@include roww(12px);
+		margin-top: auto;
+
+		& > *{
+			margin-bottom: 10px;
+		}
+		margin-bottom: -10px;
+
+		@include media-breakpoint-up(xl){
+			padding: 0 rem(24);
+		}
+	}
+	&__f-col{
+		@media (min-width: 460px) and (max-width: 576px) {
+			width: 50%;
+		}
+	}
+	&__back-btn{
+		@extend .btn-gray;
+		letter-spacing: -0.6px;
+		width: 100%;
+		@include media-breakpoint-up(sm){
+			width: auto;
+		}
+	}
+	&__hard-btn{
+		@extend .btn-gray;
+		letter-spacing: -0.6px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		padding: rem(7) rem(24) rem(7) rem(7);
+
+		&:before{
+			flex-shrink: 0;
+			content: '';
+			display: inline-block;
+
+			width: rem(25);
+			height: rem(25);
+			border-radius: rem(48);
+			margin-right: rem(11);
+
+			background: $white;
+			border: 6px solid $gray-130;
+		}
+
+		width: 100%;
+		@include media-breakpoint-up(sm){
+			width: auto;
+		}
+	}
+	&__forward-btn{
+		@extend .btn-green;
+		letter-spacing: -0.6px;
+		width: 100%;
+		@include media-breakpoint-up(sm){
+			width: auto;
+		}
+	}
+	//
+	&__{}
+	&__{}
+	&__{}
+}
+
+.pic-chb{
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+
+	&.img-contain{
+		.img-box{
+			img{
+				object-fit: contain;
+			}
+		}
+	}
+
+
+	cursor: pointer;
+	&:hover{
+		//--img-border-col: #{$gray-300};
+		--ball-inner-col: #{$primary};
+	}
+
+	input{
+
+	}
+	input:checked + .item{
+		--checked-o: 1;
+		--txt-backplate-o: 1;
+	}
+	.item{
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+	}
+	.img-box{
+		flex-grow: 1;
+		display: block;
+		width: 100%;
+		height: 0;
+		position: relative;
+		padding-top: (256/231) * 100%;
+
+		//padding: 6px;
+		z-index: 1;
+		&:before{
+			@include mt();
+			content: '';
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: var(--img-border-col, #{$gray-120});
+			border-radius: 2px;
+		}
+
+		img{
+			position: absolute;
+			z-index: 1;
+			top: 6px;
+			left: 6px;
+			width: calc(100% - 12px);
+			height: calc(100% - 12px);
+			object-fit: cover;
+		}
+
+		margin-bottom: rem(16);
+	}
+	.ball{
+		@include mt();
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+
+		width: rem(25);
+		height: rem(25);
+		background: $gray-120;
+		border-radius: 50%;
+
+		z-index: 1;
+		&:after{
+			@include mt();
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+
+			width: rem(13);
+			height: rem(13);
+			border-radius: 50%;
+			background-color: var(--ball-inner-col, #{$white});
+		}
+
+		&--checked{
+			@include mt();
+			opacity: var(--checked-o, 0);
+
+			z-index: 2;
+			&:after{
+				content: none;
+			}
+
+			background: $green11;
+			&:before{
+				content: '';
+				position: absolute;
+				z-index: 2;
+				width: 17px;
+				height: 17px;
+
+				top: 50%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+
+				background-image: url(../img/svg/checked.svg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+			}
+		}
+	}
+	.txt{
+		display: inline-block;
+		text-align: center;
+
+		font-weight: bold;
+		font-size: rem(18);
+		line-height: (22/18);
+
+		position: relative;
+		z-index: 1;
+		&:before{
+			@include mt();
+			opacity: var(--txt-backplate-o, 0);
+			content: '';
+			position: absolute;
+			z-index: -1;
+
+			top: 12px;
+			height: 9px;
+			width: calc(100% + 30px);
+			left: -15px;
+			background: $green11;
+		}
+
+		&--long{
+		 	min-height: 44px;
+		}
+	}
+
+	//
+	&--ball{
+		.img-box{
+			min-height: 105px;
+			height: auto;
+			padding: rem(20px) 0 rem(30);
+		}
+	}
+	.number{
+		display: block;
+		padding: 5px 0;
+
+		font-family: $mono2;
+		font-weight: bold;
+		font-size: rem(48);
+		line-height: (55/48);
+		text-align: center;
+		color: $gray-965;
+
+		//
+		position: relative;
+		z-index: 1;
+		&:before{
+			content: '';
+			position: absolute;
+			top: 8px;
+			z-index: -1;
+			left: 50%;
+			transform: translateX(-20%);
+
+			width: 55px;
+			height: 55px;
+			border-radius: 50%;
+			background: $green13;
+		}
+	}
+}
+
+//
+.card-form{
+	width: 372px;
+	max-width: 100%;
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.form-wrap{
+	&__input-wrap{
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		margin-bottom: 16px;
+	}
+	&__input{
+		padding-left: rem(48);
+	}
+	&__icon{
+		position: absolute;
+		pointer-events: none;
+		left: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+
+		width: 29px;
+		height: 29px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		img{
+			width: auto;
+			height: auto;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+	&__txt{
+		font-size: rem(14);
+		line-height: (19/14);
+		margin-bottom: 16px;
+	}
+	&__btn{
+		@extend .btn-default;
+		margin-bottom: 16px;
+
+		width: 100%;
+		@include media-breakpoint-up(sm){
+			width: auto;
+		}
+	}
+	&__policy{
+		font-family: $mono;
+
+		font-size: 10px;
+		line-height: 1.4;
+		color: $gray-420;
+
+		a{
+			text-decoration: none;
+			color: $gray-420;
+			&:hover{
+				text-decoration: none;
+				color: $primary;
+			}
+		}
+	}
+	&__{}
+	&__{}
+}
+
