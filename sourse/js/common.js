@@ -111,8 +111,6 @@ const JSCCommon = {
 		}, { passive: true });
 	},
 	// /mobileMenu
-
-	// tabs  .
 	tabscostume(tab) {
 		let tabs = {
 			Btn: [].slice.call(document.querySelectorAll(`.${tab}__btn`)),
@@ -136,15 +134,12 @@ const JSCCommon = {
 			})
 		})
 	},
-	// /tabs
-
 	inputMask() {
 		// mask for input
 		let InputTel = [].slice.call(document.querySelectorAll('input[type="tel"]'));
 		InputTel.forEach(element => element.setAttribute("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}"));
 		Inputmask("+9(999)999-99-99").mask(InputTel);
 	},
-	// /inputMask
 	ifie() {
 		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 		if (isIE11) {
@@ -219,18 +214,12 @@ const JSCCommon = {
 			return false;
 		});
 	},
-	getCurrentYear(el) {
-		let now = new Date();
-		let currentYear = document.querySelector(el);
-		if (currentYear) currentYear.innerText = now.getFullYear();
-	}
 };
 const $ = jQuery;
 
 function eventHandler() {
 	JSCCommon.ifie();
 	JSCCommon.modalCall();
-	//JSCCommon.tabscostume('.tabs--js');
 	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask();
@@ -261,47 +250,12 @@ function eventHandler() {
 
 	window.addEventListener('scroll', () => {
 		setFixedNav();
-
 	}, { passive: true })
 	window.addEventListener('resize', () => {
 		whenResize();
 	}, { passive: true });
 
 	whenResize();
-
-
-	let defaultSl = {
-		spaceBetween: 0,
-		lazy: {
-			loadPrevNext: true,
-		},
-		watchOverflow: true,
-		spaceBetween: 0,
-		loop: true,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-		pagination: {
-			el: ' .swiper-pagination',
-			type: 'bullets',
-			clickable: true,
-			// renderBullet: function (index, className) {
-			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-			// }
-		},
-	}
-
-	const swiper4 = new Swiper('.sBanners__slider--js', {
-		// slidesPerView: 5,
-		...defaultSl,
-		slidesPerView: 'auto',
-		freeMode: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true,
-	});
 	// modal window
 
 	//luckyone Js
