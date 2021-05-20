@@ -128,44 +128,25 @@ const JSCCommon = {
 	// /mobileMenu
 	// tabs  .
 	tabscostume(tab) {
-		const tabs = document.querySelectorAll(tab); // const indexOf = element => Array.from(element.parentNode.children).indexOf(element);
+		let tabs = {
+			Btn: [].slice.call(document.querySelectorAll(".".concat(tab, "__btn"))),
+			BtnParent: [].slice.call(document.querySelectorAll(".".concat(tab, "__caption"))),
+			Content: [].slice.call(document.querySelectorAll(".".concat(tab, "__content")))
+		};
+		tabs.Btn.forEach((element, index) => {
+			element.addEventListener('click', () => {
+				if (!element.classList.contains('active')) {
+					//turn off old
+					let oldActiveEl = element.closest(".".concat(tab)).querySelector(".".concat(tab, "__btn.active"));
+					let oldActiveContent = tabs.Content[index].closest(".".concat(tab)).querySelector(".".concat(tab, "__content.active"));
+					oldActiveEl.classList.remove('active');
+					oldActiveContent.classList.remove('active'); //turn on new(cklicked el)
 
-		tabs.forEach(element => {
-			let tabs = element;
-			const tabsCaption = tabs.querySelector(".tabs__caption");
-			const tabsBtn = tabsCaption.querySelectorAll(".tabs__btn");
-			const tabsWrap = tabs.querySelector(".tabs__wrap");
-			const tabsContent = tabsWrap.querySelectorAll(".tabs__content");
-			const random = Math.trunc(Math.random() * 1000);
-			tabsBtn.forEach((el, index) => {
-				const data = "tab-content-".concat(random, "-").concat(index);
-				el.dataset.tabBtn = data;
-				const content = tabsContent[index];
-				content.dataset.tabContent = data;
-				if (!content.dataset.tabContent == data) return;
-				const active = content.classList.contains('active') ? 'active' : ''; // console.log(el.innerHTML);
-
-				content.insertAdjacentHTML("beforebegin", "<div class=\"tabs__btn-accordion  btn btn-primary  mb-1 ".concat(active, "\" data-tab-btn=\"").concat(data, "\">").concat(el.innerHTML, "</div>"));
+					element.classList.add('active');
+					tabs.Content[index].classList.add('active');
+				}
 			});
-			tabs.addEventListener('click', function (element) {
-				const btn = element.target.closest("[data-tab-btn]:not(.active)");
-				if (!btn) return;
-				const data = btn.dataset.tabBtn;
-				const tabsAllBtn = this.querySelectorAll("[data-tab-btn");
-				const content = this.querySelectorAll("[data-tab-content]");
-				tabsAllBtn.forEach(element => {
-					element.dataset.tabBtn == data ? element.classList.add('active') : element.classList.remove('active');
-				});
-				content.forEach(element => {
-					element.dataset.tabContent == data ? (element.classList.add('active'), element.previousSibling.classList.add('active')) : element.classList.remove('active');
-				});
-			});
-		}); // $('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
-		// 	$(this)
-		// 		.addClass('active').siblings().removeClass('active')
-		// 		.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
-		// 		.eq($(this).index()).fadeIn().addClass('active');
-		// });
+		});
 	},
 
 	// /tabs
@@ -267,8 +248,9 @@ const $ = jQuery;
 
 function eventHandler() {
 	JSCCommon.ifie();
-	JSCCommon.modalCall();
-	JSCCommon.tabscostume('.tabs--js');
+	JSCCommon.modalCall(); //JSCCommon.tabscostume('.tabs--js');
+
+	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask();
 	JSCCommon.sendForm();
@@ -277,7 +259,7 @@ function eventHandler() {
 
 	var x = window.location.host;
 	let screenName;
-	screenName = document.body.dataset.bg || '01.png';
+	screenName = document.body.dataset.bg || '02.png';
 
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
@@ -342,6 +324,28 @@ function eventHandler() {
 		navigation: {
 			nextEl: '.sFeedBack-next-js',
 			prevEl: '.sFeedBack-prev-js'
+		}
+	});
+	$('.faq-btn-js').click(function () {
+		$(this).slideUp(function () {});
+		$(this).closest('.faq-item-js').find('.faq-question-js').addClass('active');
+		$(this).closest('.faq-item-js').find('.faq-reply-js').slideDown(function () {
+			$(this).toggleClass('active');
+		});
+	}); //
+
+	$('.tn-contact-btn-js').click(function () {
+		$(this).toggleClass('active');
+		$('.tn-contacts-js').fadeToggle(function () {
+			$(this).toggleClass('active');
+		});
+	});
+	document.body.addEventListener('click', function () {
+		if (!event.target.closest('.tn-contact-btn-js') && !event.target.closest('.tn-contacts-js')) {
+			$('.tn-contact-btn-js').removeClass('active');
+			$('.tn-contacts-js').fadeOut(function () {
+				$(this).removeClass('active');
+			});
 		}
 	}); //end luckyone Js
 }

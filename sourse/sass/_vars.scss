@@ -49,6 +49,7 @@ $gray-610: #7D7E73;
 $gray-620: #7C7C7C;
 $gray-700: #495057 !default;
 $gray-720: #494949;
+$gray-730: #555555;
 $gray-800: #343a40 !default;
 $gray-860: #37382D;
 $gray-900: #212529 !default;
@@ -57,6 +58,7 @@ $gray-960: #242424;
 $gray-965: #262626;
 $gray-980: #1A1A19;
 $gray-990: #1a1b1a;
+$gray-995: #1E1E1D;
 $black: #000 !default;
 // scss-docs-end gray-color-variables
 
@@ -96,6 +98,7 @@ $green11: #C7D47A;
 $green12: #B5C651;
 $green13: #DDE3BC;
 $green14: #74831C;
+$green15: #BDC1A4;
 
 $teal: #20c997 !default;
 $cyan: #0dcaf0 !default;
@@ -303,6 +306,7 @@ $spacers: (0: 0,
   4: $spacer * 1.5,
   5: $spacer * 3,
   12: rem(12),
+  32: rem(32),
 ) !default;
 
 $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;

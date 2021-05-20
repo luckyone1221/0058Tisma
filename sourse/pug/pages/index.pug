@@ -8,6 +8,7 @@ include ../blocks/sKnow/_sKnow.pug
 include ../blocks/sFeedBack/_sFeedBack.pug
 include ../blocks/sMaterial/_sMaterial.pug
 include ../blocks/sRecent/_sRecent.pug
+include ../blocks/sFAQ/_sFAQ.pug
 
 block variables
 	- let  mainPage= null 
@@ -18,7 +19,7 @@ block title
 	title= title
 block pagecontent
 	+mob-mnu()
-	+header()
+	//-+header()
 	+top-nav()
 	+headerBlock()
 	+sInterier()
@@ -26,4 +27,6 @@ block pagecontent
 	+sFeedBack()
 	+sMaterial()
 	+sRecent()
+	+sFAQ()
+	+sForm()
 	+footer()

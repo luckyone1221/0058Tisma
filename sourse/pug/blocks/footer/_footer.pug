@@ -1,2 +1,56 @@
 mixin footer()
-	footer.footer
+  +b.FOOTER.footer
+    +e.top
+      .container
+        +e.main-row.row.gy-4
+          .col-sm-6.col-lg-4.col-xl-3
+            +e.logo
+              img(loading="lazy" src="img/svg/logo.svg" alt="")
+            +e.logo-txt Фабрика по изготовлению кухонь на заказ
+          .col-sm-6.col-lg-4.col-xl-3.text-sm-end.text-lg-start
+            +e.number(href="tel:+79000000000") +7 (900) 000-00-00
+            +e.shedule Ежедневно с 9:00-20:00
+          .col-sm-6.col-lg-4.col-xl-3
+            +footerContactPlate('f-mail')
+              +e.mail(href="mailto:mail@tismamebel.ru") mail@tismamebel.ru
+            +footerContactPlate('f-location')
+              +e.address-txt Переулок Минераловодский 4/2, Георгиевск
+          .col-sm-6.col-lg-12.col-xl-3
+            +e.soc-parent-row.row
+              .col-sm-12.col-lg.col-xl-12
+                +e.soc-row.row.gy-3.justify-content-sm-end.justify-content-lg-start.justify-content-xl-end
+                  +footerSocItem('inst')
+                  +footerSocItem('fb')
+                  +footerSocItem('vk')
+                  +footerSocItem('ok')
+              .col-sm-12.col-lg-auto.col-xl-12
+                +e.dev-row.row
+                  .col-auto.col-sm
+                    +e.d-txt
+                      | Разработка и
+                      br
+                      | продвижение сайта
+                  .col.col-sm-auto
+                    +e.dev-logo(href="#")
+                      img(loading="lazy" src="img/svg/developers-logo.svg" alt="")
+    +e.bot
+      .container
+        +e.b-row.row.gy-3
+          .col-auto
+            +e.b-link(href='#') Политика конфиденциальности
+          .col-auto
+            +e.b-link(href='#') Политика конфиденциальности
+
+mixin footerSocItem(iconName)
+  .col-auto
+    +e.soc-link(href='#')
+      img(loading="lazy" src=`img/svg/f-${iconName}.svg` alt="")
+
+mixin footerContactPlate(icon)
+  +e.plate
+    +e.p-row.row.gy-3.align-items-center
+      .col-auto
+        +e.ball
+          +icon(icon)
+      .col
+        block

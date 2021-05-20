@@ -1,9 +1,55 @@
 mixin sContact()
 	// start sContact
 	+b.SECTION.sContact.section#sContact&attributes(attributes)
+		+e.bg
+			+pic('sContacts-bg')(class="sContact__bg-pic")
 		.container
-			+b.section-title.text-center
-				h2 sContact
-				
-			.row
+			+e.main-row.row.gy-5
+				+e.txt-col.col-md-6.col-lg-5.col-xxl-auto
+					+b.section-title
+						h1 Наши контакты
+					+e.items
+						+sContactItem('sContacts-tell')
+							+e.link(href='tel:+79000000000') +7 (900) 000-00-00
+							+e.small Ежедневно с 9:00 до 21:00
+						+sContactItem('sContacts-mail')
+							+e.link(href='mailto:hello@tismamebel.ru') hello@tismamebel.ru
+							+e.small По всем вопросам
+						+sContactItem()
+							+e.link(href='mailto:buy@tismamebel.ru') buy@tismamebel.ru
+							+e.small Отдел продаж
+						+e.location-cont
+							+e.item-row.row.gy-3
+								.col-sm-auto
+									+e.ball-cont
+										+e.ball
+											+e.icon
+												img(loading="lazy" src=`img/svg/sContacts-globe.svg` alt="")
+								.col-sm
+									+e.loc-txt
+										| Переулок
+										br
+										| Минераловодский 4/2,
+										br
+										| Георгиевск
+									+e.btn-cont
+										+e.btn.link-modal-js(href='#modal-call') задать вопрос
+										+e.descr Оставьте свой телефон и мы оперативно вам перезвоним.
+				+e.map-col.col-md-6.col-lg-7.col-xxl
+					+e.map
+						<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A32032e6411fb161ffb798e23606d27ec7f49b69df62610d39ad561421bcd5229&amp;width=889&amp;height=720&amp;lang=ru_RU&amp;scroll=false"></script>
 	// end sContact
+
+mixin sContactItem(iconName)
+	+e.item
+		+e.item-row.row.align-items-center
+			.col-auto
+				if iconName
+					+e.ball-cont
+						+e.ball
+							+e.icon
+								img(loading="lazy" src=`img/svg/${iconName}.svg` alt="")
+				else
+					+e.ball-cont
+			.col
+				block

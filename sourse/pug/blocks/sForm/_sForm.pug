@@ -2,8 +2,30 @@ mixin sForm()
 	// start sForm
 	+b.SECTION.sForm.section#sForm&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sForm
-				
-			.row
+			+e.main-row.row.gy-4
+				.col-md-6
+					+b.section-title
+						h2 Не нашли ответ на свой вопрос?
+						p Заполните форму, чтобы наш менеджер связался с Вами и подробно проконсультировал по всем вопросам.
+					+e.name-row.row.align-items-center.gy-3
+						.col-auto
+							+pic('sForm-man.png')(class="sForm__man")
+						.col
+							+e.name Георгий А.
+							+e.duty Ваш личный менеджер.
+				.col-md-6
+					+form-wrap()
+						+e.input-wrap.form-group
+							+e.INPUT.input.form-control(name="" type="text" placeholder="Введите Ваше имя")
+							+e.icon
+								img(loading='lazy' src="img/name-inp-icon2.png" alt="")
+						+e.input-wrap.form-group.mb-32
+							+e.INPUT.input.form-control(name="" type="tell" placeholder="+7 (900) 000-00-00")
+							+e.icon
+								img(loading='lazy' src="img/svg/inp-flag2.svg" alt="")
+						+e.btn(type="submit") отправить заявку
+						+e.polite
+							| Нажимая на кнопку, вы даете согласие на обработку
+							|
+							a(href="#") персональных данных.
 	// end sForm

@@ -1,0 +1,29 @@
+mixin sFAQ(data)
+	// start sFAQ
+	+b.SECTION.sFAQ.section#sFAQ&attributes(attributes)
+		+e.container.container
+			+e.q-sign.d-none.d-md-block
+				img(loading="lazy" src="img/svg/sFaq-q-sing.svg" alt="")
+			+b.section-title
+				h2 Часто задаваемые вопросы
+			+e.row.row
+				+sFAQItem('1.jpg')
+					| Кухня у меня уже есть, мне нужно еще пару шкафчиков, вы это делаете?
+				+sFAQItem('2.png')
+					| Я хочу сделать кухню максимально дешево, Вы сможете мне помочь?
+				+sFAQItem('3.jpg')
+					| Из чего у вас складывается цена на кухни, сколько стоит кухонный гарнитур?
+	// end sFAQ
+
+mixin sFAQItem(imgEnd)
+	+e.col.col-xl-4
+		+e.item.faq-item-js
+			+e.ques-bl
+				+pic(`sFAQ-img-${imgEnd}`)(class="sFAQ__pic")
+				+e.question.faq-question-js
+					block
+				+e.show-btn.faq-btn-js Посмотреть ответ
+			+e.reply.faq-reply-js
+				p Если Вы все еще сомневаетесь в качестве выполненния нашей работы, прочитайте реальные отзывы, оставленные нашими клиентами.
+				p Если Вы все еще сомневаетесь в качестве выполненния нашей работы, прочитайте реальные отзывы, оставленные нашими клиентами.
+				p Если Вы все еще сомневаетесь в качестве выполненния нашей работы, прочитайте реальные отзывы, оставленные нашими клиентами.

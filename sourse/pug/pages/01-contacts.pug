@@ -1,0 +1,24 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sInterier/_sInterier.pug
+include ../blocks/sKnow/_sKnow.pug
+include ../blocks/sFeedBack/_sFeedBack.pug
+include ../blocks/sMaterial/_sMaterial.pug
+include ../blocks/sRecent/_sRecent.pug
+include ../blocks/sFAQ/_sFAQ.pug
+
+block variables
+	- let  mainPage= null 
+	- let  bg= null
+
+block title
+	- let  title= '01-contacts'
+	title= title
+block pagecontent
+	+mob-mnu()
+	+top-nav()
+	+sContact()
+	+footer()

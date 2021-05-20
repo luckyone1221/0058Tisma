@@ -14,7 +14,7 @@ mixin mob-mnu()
 mixin top-nav() 
 	// start top-nav
 	+b.top-nav.block-with-lazy
-		.container
+		+e.container.container
 			+e.row.row.align-items-center
 				.col.col-md-auto
 					+e.logo(href="#")
@@ -27,10 +27,19 @@ mixin top-nav()
 					+e.tell(href="#") +7 (900) 000-00-00
 					+e.shedule Ежедневно с 9:00 до 21:00
 				.col-auto
-					+e.btn(href="#")
+					+e.btn.tn-contact-btn-js
 						+icon('circle-icon')
 				.col-auto.d-xl-none
 					+b.toggle-menu-mobile--js
 						span
-					
+			+e.btns-cont.tn-contacts-js
+				+e.b-row.row
+					+topNavBtnContItem('top-nav-tell')
+					+topNavBtnContItem('tabs-wa')
+					+topNavBtnContItem('tabs-vb')
 	// end top-nav
+
+mixin topNavBtnContItem(imgName)
+	.col-auto
+		+e.b-btn(href='#')
+			img(loading="lazy" src=`img/svg/${imgName}.svg` alt="")

@@ -1,0 +1,139 @@
+// start .sFAQ
+.sFAQ {
+	--sPT: #{rem(65)};
+	--sPB: #{rem(75)};
+	--sTPB: #{rem(29)};
+	position: relative;
+	z-index: 2;
+
+
+	.section-title{
+		h2{
+
+		}
+	}
+	//
+	&__container{
+		position: relative;
+		z-index: 1;
+	}
+	&__q-sign{
+		position: absolute;
+		z-index: -1;
+		top: -58px;
+
+		right: 10px;
+		@include media-breakpoint-up(xl){
+			right: 200px;
+		}
+		@include media-breakpoint-up(xxl){
+			right: 280px;
+		}
+	}
+	&__row{
+		@include roww(15px);
+		--bs-gutter-y: 15px;
+	}
+	&__col{
+		@include media-breakpoint-up(xxl){
+			&:nth-child(3n + 1){
+				width: 31.45%;
+			}
+			&:nth-child(3n + 2){
+				width: 37.1%;
+			}
+			&:nth-child(3n + 3){
+				width: 31.45%;
+			}
+		}
+	}
+	&__item{
+		min-height: 100%;
+		position: relative;
+		z-index: 1;
+
+		display: flex;
+		flex-direction: column;
+
+		--faq-item-x-padd: #{rem(16)};
+		@include media-breakpoint-up(sm){
+			--faq-item-x-padd: #{rem(32)};
+		}
+	}
+	&__pic{
+		border-radius: 2px;
+		overflow: hidden;
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		&:after{
+			content: '';
+			position: absolute;
+			z-index: 1;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #D4E37A 100%), linear-gradient(230.75deg, rgba(212, 227, 122, 0.46) 9.27%, rgba(255, 255, 255, 0) 46.53%, rgba(212, 227, 122, 0.46) 84.5%);
+		}
+	}
+	&__ques-bl{
+		flex-grow: 1;
+		padding: var(--faq-item-x-padd, 32px);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: flex-start;
+
+		position: relative;
+		z-index: 1;
+	}
+	&__question{
+		@include mt();
+		font-weight: bold;
+
+		font-size: rem(24);
+		margin-bottom: rem(20);
+		&.active{
+			font-size: rem(18);
+			margin-bottom: 4px;
+		}
+	}
+	&__show-btn{
+		@extend .btn-white;
+
+		padding: rem(8) rem(19);
+	}
+	&__reply{
+		display: none;
+		&.active{
+			display: block;
+		}
+
+		position: relative;
+		z-index: 2;
+
+		padding: 30px var(--faq-item-x-padd, 32px) rem(39);
+		background: $gray-110;
+		margin-top: auto;
+
+		font-family: $mono;
+
+		p{
+			margin-bottom: rem(23);
+			line-height: 1.55;
+		}
+	}
+	&__{}
+	&__{}
+} // end.sFAQ

@@ -1,7 +1,7 @@
 // start .sRecent
 .sRecent {
 	--sPT: #{rem(27)};
-	--sPB: #{rem(45)};
+	--sPB: #{rem(65)};
 
 	--sTPB: #{rem(40)};
 	@include media-breakpoint-up(xl){
