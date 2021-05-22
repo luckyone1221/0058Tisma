@@ -157,16 +157,37 @@
 } // end.sKnow
 
 .quize{
-	&__header-row{
-		@include roww(12px);
-		--bs-gutter-y: 12px;
-		@include media-breakpoint-up(xxl){
-			@include roww(15px);
-			--bs-gutter-y: 15px;
+	//&__header-row{
+	//	@include roww(12px);
+	//	--bs-gutter-y: 12px;
+	//	@include media-breakpoint-up(xxl){
+	//		@include roww(15px);
+	//		--bs-gutter-y: 15px;
+	//	}
+	//	padding-bottom: rem(15);
+	//}
+	&__slider-wrap{
+		.swiper-container{
+
+		}
+		.swiper-wrapper{
+
+		}
+		.swiper-slide{
+			width: 150px;
+			@include media-breakpoint-up(lg){
+				width: calc(100% / 5 - (12px * 4/5));
+			}
+			@include media-breakpoint-up(xxl){
+				width: calc(100% / 5 - (15px * 4/5));
+			}
+
 		}
 
 		padding-bottom: rem(15);
 	}
+
+	//
 	&__step{
 		@include mt();
 		width: 100%;

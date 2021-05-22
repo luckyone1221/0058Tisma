@@ -11,13 +11,17 @@
 
 		margin-bottom: rem(23);
 	}
-	&__row{
-		@include roww(14px);
-		--bs-gutter-y: 14px;
-	}
-	&__col{
-		@include media-breakpoint-up(xxl){
-			width: calc(100%/8);
+
+	&__slider-wrap{
+		.swiper-container{
+			overflow: visible!important;
+		}
+		.swiper-wrapper{}
+		.swiper-slide{
+			width: 150px;
+			@include media-breakpoint-up(xl){
+				width: calc(100% / 8 - (14px * 7/8));
+			}
 		}
 	}
 	&__img{

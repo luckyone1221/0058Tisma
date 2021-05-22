@@ -48,7 +48,15 @@ mixin sKnowCard(imgNum)
 
 mixin quize()
 	+b.quize
-		+e.header-row.row
+		+e.slider-wrap
+			.swiper-container.quize-steps-slider-js
+				.swiper-wrapper
+					+quizeStep('Стиль интерьера', 'active')
+					+quizeStep('Тип кухни', '')
+					+quizeStep('Площадь кухни', '')
+					+quizeStep('Сроки', '')
+					+quizeStep('Бюджет', '')
+		//-+e.header-row.row
 			+quizeStep('Стиль интерьера', 'active', 'col-6 col-sm-4')
 			+quizeStep('Тип кухни', '', 'col-6 col-sm-4')
 			+quizeStep('Площадь кухни', '', 'col-6 col-sm-4')
@@ -180,8 +188,8 @@ mixin ballChb(number, txt, addClasses='')
 					span.txt.txt--long=txt
 
 
-mixin quizeStep(txt, addClasses='', bootClasses='')
-	.col-md(class=bootClasses)
+mixin quizeStep(txt, addClasses='')
+	.swiper-slide
 		+e.step(class=addClasses)=txt
 
 mixin quizeCard(title, addClasses, rowAlt=true)

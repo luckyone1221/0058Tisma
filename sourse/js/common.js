@@ -292,6 +292,24 @@ function eventHandler() {
 			});
 		}
 	});
+	//
+	let quizeStepsSlider = new Swiper('.quize-steps-slider-js', {
+		slidesPerView: 'auto',
+		breakpoints: {
+			0: {
+				spaceBetween: 12,
+			},
+			992: {
+				spaceBetween: 15,
+			}
+		},
+	});
+	//
+	let sMaterialSlider = new Swiper('.sMaterial-slider-js', {
+		slidesPerView: 'auto',
+		spaceBetween: 14,
+	});
+
 
 	//end luckyone Js
 

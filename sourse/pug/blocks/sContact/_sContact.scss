@@ -125,7 +125,10 @@
 		}
 
 		margin-bottom: 9px;
-		color: $green11;
+		//color: $green11;
+		background: linear-gradient(90deg, rgba($white, .47), rgba($white, 0)), $green11,;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
 	&__small{
 		font-family: $mono;

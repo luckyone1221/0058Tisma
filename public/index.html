@@ -313,25 +313,29 @@
 					<div class="sKnow__main-row row gy-3">
 						<div class="sKnow__steps-col col-xl-auto">
 							<div class="quize">
-								<div class="quize__header-row row">
-									<div class="col-md col-6 col-sm-4">
-										<div class="quize__step active">Стиль интерьера
-										</div>
-									</div>
-									<div class="col-md col-6 col-sm-4">
-										<div class="quize__step">Тип кухни
-										</div>
-									</div>
-									<div class="col-md col-6 col-sm-4">
-										<div class="quize__step">Площадь кухни
-										</div>
-									</div>
-									<div class="col-md col-6 col-sm-6">
-										<div class="quize__step">Сроки
-										</div>
-									</div>
-									<div class="col-md col-12 col-sm-6">
-										<div class="quize__step">Бюджет
+								<div class="quize__slider-wrap">
+									<div class="swiper-container quize-steps-slider-js">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide">
+												<div class="quize__step active">Стиль интерьера
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="quize__step">Тип кухни
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="quize__step">Площадь кухни
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="quize__step">Сроки
+												</div>
+											</div>
+											<div class="swiper-slide">
+												<div class="quize__step">Бюджет
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -676,7 +680,9 @@
 			<!-- end sKnow-->
 			<!-- start sFeedBack-->
 			<section class="sFeedBack section" id="sFeedBack">
-				<div class="container">
+				<div class="sFeedBack__container container">
+					<div class="sFeedBack__brackets d-sm-block d-none"><img loading="lazy" src="img/svg/brackets.svg" alt=""/>
+					</div>
 					<div class="sFeedBack__row row gy-4">
 						<div class="sFeedBack__txt-col col-xl-5 col-xxl-auto">
 							<div class="section-title">
@@ -685,13 +691,19 @@
 							</div>
 							<div class="sFeedBack__sub-row row">
 								<div class="col">
-									<div class="sFeedBack__amount-cont">
-										<div class="sFeedBack__amount">140+
+									<div class="sFeedBack__a-row row pb-3 pb-sm-0">
+										<div class="col col-sm-12">
+											<div class="sFeedBack__amount-cont">
+												<div class="sFeedBack__amount">140+
+												</div>
+												<div class="sFeedBack__amount-txt">клиентов с 2010 года.
+												</div>
+											</div>
 										</div>
-										<div class="sFeedBack__amount-txt">клиентов с 2010 года.
+										<div class="col-auto col-sm-12">
+											<div class="sFeedBack__rate"><img loading="lazy" src="img/@2x/yandex-rate.png" alt=""/>
+											</div>
 										</div>
-									</div>
-									<div class="sFeedBack__rate"><img loading="lazy" src="img/@2x/yandex-rate.png" alt=""/>
 									</div>
 								</div>
 								<div class="sFeedBack__arrow-col col-sm-auto">
@@ -823,37 +835,41 @@
 				<div class="container">
 					<div class="sMaterial__title">Работаем с проверенными материалами
 					</div>
-					<div class="sMaterial__row row">
-						<div class="sMaterial__col col-6 col-md-3">
-							<div class="sMaterial__img"><img loading="lazy" src="img/@2x/sMaterial-1.png" alt=""/>
-							</div>
-						</div>
-						<div class="sMaterial__col col-6 col-md-3">
-							<div class="sMaterial__img"><img loading="lazy" src="img/@2x/sMaterial-2.png" alt=""/>
-							</div>
-						</div>
-						<div class="sMaterial__col col-6 col-md-3">
-							<div class="sMaterial__img"><img loading="lazy" src="img/@2x/sMaterial-3.png" alt=""/>
-							</div>
-						</div>
-						<div class="sMaterial__col col-6 col-md-3">
-							<div class="sMaterial__img"><img loading="lazy" src="img/@2x/sMaterial-4.png" alt=""/>
-							</div>
-						</div>
-						<div class="sMaterial__col col-6 col-md-3">
-							<div class="sMaterial__img"><img loading="lazy" src="img/@2x/sMaterial-5.png" alt=""/>
-							</div>
-						</div>
-						<div class="sMaterial__col col-6 col-md-3">
-							<div class="sMaterial__img"><img loading="lazy" src="img/@2x/sMaterial-6.png" alt=""/>
-							</div>
-						</div>
-						<div class="sMaterial__col col-6 col-md-3">
-							<div class="sMaterial__img"><img loading="lazy" src="img/@2x/sMaterial-7.png" alt=""/>
-							</div>
-						</div>
-						<div class="sMaterial__col col-6 col-md-3">
-							<div class="sMaterial__img"><img loading="lazy" src="img/@2x/sMaterial-8.png" alt=""/>
+					<div class="sMaterial__slider-wrap">
+						<div class="swiper-container sMaterial-slider-js">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="sMaterial__img"><img loading="lazy" src="img/@2x/sMaterial-1.png" alt=""/>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="sMaterial__img"><img loading="lazy" src="img/@2x/sMaterial-2.png" alt=""/>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="sMaterial__img"><img loading="lazy" src="img/@2x/sMaterial-3.png" alt=""/>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="sMaterial__img"><img loading="lazy" src="img/@2x/sMaterial-4.png" alt=""/>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="sMaterial__img"><img loading="lazy" src="img/@2x/sMaterial-5.png" alt=""/>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="sMaterial__img"><img loading="lazy" src="img/@2x/sMaterial-6.png" alt=""/>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="sMaterial__img"><img loading="lazy" src="img/@2x/sMaterial-7.png" alt=""/>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="sMaterial__img"><img loading="lazy" src="img/@2x/sMaterial-8.png" alt=""/>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -933,7 +949,7 @@
 									<!-- /picture-->
 									<div class="sFAQ__question faq-question-js">Кухня у меня уже есть, мне нужно еще пару шкафчиков, вы это делаете?
 									</div>
-									<div class="sFAQ__show-btn faq-btn-js">Посмотреть ответ
+									<div class="sFAQ__show-btn faq-btn-js active">Посмотреть ответ
 									</div>
 								</div>
 								<div class="sFAQ__reply faq-reply-js">
@@ -959,7 +975,7 @@
 									<div class="sFAQ__show-btn faq-btn-js">Посмотреть ответ
 									</div>
 								</div>
-								<div class="sFAQ__reply faq-reply-js">
+								<div class="sFAQ__reply faq-reply-js active">
 									<p>Если Вы все еще сомневаетесь в качестве выполненния нашей работы, прочитайте реальные отзывы, оставленные нашими клиентами.</p>
 									<p>Если Вы все еще сомневаетесь в качестве выполненния нашей работы, прочитайте реальные отзывы, оставленные нашими клиентами.</p>
 									<p>Если Вы все еще сомневаетесь в качестве выполненния нашей работы, прочитайте реальные отзывы, оставленные нашими клиентами.</p>
@@ -979,7 +995,7 @@
 									<!-- /picture-->
 									<div class="sFAQ__question faq-question-js">Из чего у вас складывается цена на кухни, сколько стоит кухонный гарнитур?
 									</div>
-									<div class="sFAQ__show-btn faq-btn-js">Посмотреть ответ
+									<div class="sFAQ__show-btn faq-btn-js active">Посмотреть ответ
 									</div>
 								</div>
 								<div class="sFAQ__reply faq-reply-js">
@@ -1169,7 +1185,7 @@
 									<div class="form-wrap__icon"><img loading="lazy" src="img/name-inp-icon2.png" alt=""/>
 									</div>
 								</div>
-								<div class="form-wrap__input-wrap form-group mb-32"><input class="form-wrap__input form-control" name="" type="tell" placeholder="+7 (900) 000-00-00"/>
+								<div class="form-wrap__input-wrap form-group mb-32"><input class="form-wrap__input form-control" name="" type="tel" placeholder="+7 (900) 000-00-00"/>
 									<div class="form-wrap__icon"><img loading="lazy" src="img/svg/inp-flag2.svg" alt=""/>
 									</div>
 								</div>

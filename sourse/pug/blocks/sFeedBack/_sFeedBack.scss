@@ -4,6 +4,25 @@
 	--sPB: #{rem(45)};
 	--sTPB: #{rem(42)};
 
+	&__container{
+		position: relative;
+		z-index: 1;
+	}
+	&__brackets{
+		position: absolute;
+		z-index: -1;
+		right: 50px;
+		top: -40px;
+		width: 94px;
+		height: 72px;
+
+		img{
+			width: auto;
+			height: auto;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
 	&__row{
 		@include roww(15px);
 	}
@@ -44,6 +63,7 @@
 			z-index: -1;
 			width: rem(90);
 			height: rem(90);
+
 			border-radius: 50%;
 			top: rem(-12);
 			left: rem(28);
@@ -52,14 +72,27 @@
 
 		margin-bottom: rem(23);
 	}
+	&__a-row{
+		@include roww(15px);
+	}
+
 	&__amount{
 		font-family: $mono;
-		font-size: rem(48);
 		line-height: 1;
 		margin: rem(12) 0 0;
+
+		font-size: rem(36);
+		@include media-breakpoint-up(sm){
+			font-size: rem(48);
+		}
 	}
 	&__amount-txt{
 		font-family: $mono;
+
+		font-size: 12px;
+		@include media-breakpoint-up(sm){
+			font-size: rem(15px);
+		}
 	}
 	&__rate{
 		display: block;

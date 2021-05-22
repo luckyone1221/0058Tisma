@@ -7,23 +7,32 @@ mixin sFAQ(data)
 			+b.section-title
 				h2 Часто задаваемые вопросы
 			+e.row.row
-				+sFAQItem('1.jpg')
+				+sFAQItem({
+					imgEnd: '1.jpg',
+					btnClasses: 'active',
+				})
 					| Кухня у меня уже есть, мне нужно еще пару шкафчиков, вы это делаете?
-				+sFAQItem('2.png')
+				+sFAQItem({
+					imgEnd: '2.png',
+					replyClasses: 'active',
+				})
 					| Я хочу сделать кухню максимально дешево, Вы сможете мне помочь?
-				+sFAQItem('3.jpg')
+				+sFAQItem({
+					imgEnd: '3.jpg',
+					btnClasses: 'active',
+				})
 					| Из чего у вас складывается цена на кухни, сколько стоит кухонный гарнитур?
 	// end sFAQ
 
-mixin sFAQItem(imgEnd)
+mixin sFAQItem(data)
 	+e.col.col-xl-4
 		+e.item.faq-item-js
 			+e.ques-bl
-				+pic(`sFAQ-img-${imgEnd}`)(class="sFAQ__pic")
+				+pic(`sFAQ-img-${data.imgEnd}`)(class="sFAQ__pic")
 				+e.question.faq-question-js
 					block
-				+e.show-btn.faq-btn-js Посмотреть ответ
-			+e.reply.faq-reply-js
+				+e.show-btn.faq-btn-js(class=`${data.btnClasses || ''}`) Посмотреть ответ
+			+e.reply.faq-reply-js(class=`${data.replyClasses || ''}`)
 				p Если Вы все еще сомневаетесь в качестве выполненния нашей работы, прочитайте реальные отзывы, оставленные нашими клиентами.
 				p Если Вы все еще сомневаетесь в качестве выполненния нашей работы, прочитайте реальные отзывы, оставленные нашими клиентами.
 				p Если Вы все еще сомневаетесь в качестве выполненния нашей работы, прочитайте реальные отзывы, оставленные нашими клиентами.

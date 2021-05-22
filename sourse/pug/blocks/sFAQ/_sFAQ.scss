@@ -111,8 +111,12 @@
 	}
 	&__show-btn{
 		@extend .btn-white;
-
 		padding: rem(8) rem(19);
+
+		display: none;
+		&.active{
+			display: block;
+		}
 	}
 	&__reply{
 		display: none;

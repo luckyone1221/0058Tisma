@@ -1,7 +1,9 @@
 mixin sFeedBack(data)
 	// start sFeedBack
 	+b.SECTION.sFeedBack.section#sFeedBack&attributes(attributes)
-		.container
+		+e.container.container
+			+e.brackets.d-sm-block.d-none
+				img(loading="lazy" src='img/svg/brackets.svg' alt="")
 			+e.row.row.gy-4
 				+e.txt-col.col-xl-5.col-xxl-auto
 					+b.section-title
@@ -9,11 +11,14 @@ mixin sFeedBack(data)
 						p Если Вы все еще сомневаетесь в качестве выполненния нашей работы, прочитайте реальные отзывы, оставленные нашими клиентами.
 					+e.sub-row.row
 						.col
-							+e.amount-cont
-								+e.amount 140+
-								+e.amount-txt клиентов с 2010 года.
-							+e.rate
-								img(loading="lazy" src="img/@2x/yandex-rate.png" alt="")
+							+e.a-row.row.pb-3.pb-sm-0
+								.col.col-sm-12
+									+e.amount-cont
+										+e.amount 140+
+										+e.amount-txt клиентов с 2010 года.
+								.col-auto.col-sm-12
+									+e.rate
+										img(loading="lazy" src="img/@2x/yandex-rate.png" alt="")
 						+e.arrow-col.col-sm-auto
 							+e.arrow.sFeedBack-prev-js.mb-sm-12
 								+e.icon.mb-2
