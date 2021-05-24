@@ -40,6 +40,7 @@ module.exports = function () {
 			.pipe($.babel())
 			.pipe($.tabify(2, true))
 			.pipe($.gulp.dest($.public + '/js'))
+			.pipe($.gulp.dest($.wp + '/js'))
 			.pipe($.browserSync.stream());
 	}
 	);

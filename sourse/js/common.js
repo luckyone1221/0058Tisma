@@ -203,17 +203,6 @@ const JSCCommon = {
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
 		}, { passive: true });
 	},
-	animateScroll() {
-
-		$(document).on('click', " .top-nav li a, .scroll-link", function () {
-			const elementClick = $(this).attr("href");
-			const destination = $(elementClick).offset().top;
-
-			$('html, body').animate({ scrollTop: destination }, 1100);
-
-			return false;
-		});
-	},
 };
 const $ = jQuery;
 
@@ -225,15 +214,6 @@ function eventHandler() {
 	JSCCommon.inputMask();
 	JSCCommon.sendForm();
 	JSCCommon.heightwindow();
-	JSCCommon.animateScroll();
-
-	// JSCCommon.CustomInputFile(); 
-	var x = window.location.host;
-	let screenName;
-	screenName = document.body.dataset.bg || '02.png';
-	if (screenName && x.includes("localhost:30")) {
-		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
-	}
 
 
 	function setFixedNav() {
@@ -293,6 +273,11 @@ function eventHandler() {
 		}
 	});
 	//
+	let sMaterialSlider = new Swiper('.sMaterial-slider-js', {
+		slidesPerView: 'auto',
+		spaceBetween: 14,
+	});
+	//quize-js
 	let quizeStepsSlider = new Swiper('.quize-steps-slider-js', {
 		slidesPerView: 'auto',
 		breakpoints: {
@@ -304,11 +289,51 @@ function eventHandler() {
 			}
 		},
 	});
-	//
-	let sMaterialSlider = new Swiper('.sMaterial-slider-js', {
-		slidesPerView: 'auto',
-		spaceBetween: 14,
+
+	let allSlides = document.querySelectorAll('.quize-step-slide-js');
+	let cardWraps = document.querySelectorAll('.quize-card-wrap-js');
+	let starCardIndex = 0;
+
+	//move forward
+	$('.forward-btn-js').click(function (){
+		let cardWrap = this.closest('.quize-card-wrap-js');
+
+		if (somethingWasChosen(cardWrap)){
+			goToNextStep(starCardIndex);
+			starCardIndex++;
+
+			$(cardWrap).slideUp(function (){
+				$(this).removeClass('active');
+			});
+			$(cardWraps[starCardIndex]).slideDown(function (){
+				$(this).addClass('active');
+			})
+		}
 	});
+
+	//on radio choise
+	$('.q-radio-choise-js').click(function (){
+		let name = this.getAttribute('name');
+		let value = this.getAttribute('value');
+
+		let hiddenInput = document.querySelector(`.quize-hidden-inp-js[name=${name}]`);
+		hiddenInput.value = value;
+	});
+
+	//add funcs
+	function goToNextStep(index){
+		$(allSlides[index]).find('.quize-step-btn-js').addClass('active');
+
+		quizeStepsSlider.slideNext();
+	}
+	function somethingWasChosen(card){
+		let cardInputsName = card.querySelector('.q-radio-choise-js').getAttribute('name');
+
+		//refers to current card
+		let hiddenInput = document.querySelector(`.quize-hidden-inp-js[name=${cardInputsName}]`).value;
+		return hiddenInput;
+	}
+
 
 
 	//end luckyone Js

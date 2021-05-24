@@ -43,6 +43,9 @@
 
 		display: block;
 		color: $green2;
+		&:hover{
+			color: $green;
+		}
 		text-decoration: none;
 
 		font-weight: bold;
@@ -96,6 +99,9 @@
 		line-height: (22/18);
 
 		color: $green2;
+		&:hover{
+			color: $green;
+		}
 	}
 	&__address-txt{
 		font-family: $mono;
@@ -165,7 +171,10 @@
 		font-size: 10px;
 		line-height: 1.4;
 
-		color: $gray-730;
+		color: $gray-730!important;
+		&:hover{
+			color: $gray-400!important;
+		}
 	}
 	&__{}
 	&__{}

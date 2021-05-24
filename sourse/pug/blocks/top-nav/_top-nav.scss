@@ -63,38 +63,40 @@
       margin: 0 0 0 10px;
     }
 
-    &__item{
+    & > li{
       padding: 0;
       margin-right: 32px;
       &:last-child{
         margin-right: 0;
       }
-    }
-    &__link{
-      text-decoration: none;
-      padding: 21px 0;
 
-      font-weight: bold;
-      line-height: (18/15);
-      color: $green2;
+      & > a{
+        display: block;
+        text-decoration: none;
+        padding: 21px 0;
 
-      position: relative;
-      &.active{
-        &:after{
-          opacity: 1;
+        font-weight: bold;
+        line-height: (18/15);
+        color: $green2;
+
+        position: relative;
+        &:hover{
+          &:after{
+            opacity: 1;
+          }
         }
-      }
 
-      &:after{
-        @include mt();
-        opacity: 0;
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: -13px;
-        width: calc(100% + 26px);
-        height: 1px;
-        background: #CADA6A;
+        &:after{
+          @include mt();
+          opacity: 0;
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: -13px;
+          width: calc(100% + 26px);
+          height: 1px;
+          background: $green;
+        }
       }
     }
   }
@@ -104,6 +106,9 @@
     font-size: rem(18);
     line-height: (22/18);
     color: $primary;
+    &:hover{
+      color: lighten($primary, 4);
+    }
   }
   &__shedule{
     font-family: $mono;

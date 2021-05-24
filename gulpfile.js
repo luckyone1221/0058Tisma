@@ -37,12 +37,12 @@ global.$ = {
         tasks: require('./gulp/config/tasks.js'),
     },
     public: 'public',
+    wp: 'wordpress/wp-content/themes/tisma/public',
     sourse: 'sourse',
 }
 $.path.tasks.forEach(function (taskPath) {
     require(taskPath)();
 });
-
 
 $.gulp.task('img', $.gulp.series('cleanimg', 'img-responsive', 'img1x'));
 $.gulp.task('libs', $.gulp.series('cleanlibs', 'copylibs'));

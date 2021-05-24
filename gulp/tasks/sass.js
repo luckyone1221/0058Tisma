@@ -17,7 +17,8 @@ module.exports = () => {
 			.pipe($.gcmq())
 			.pipe($.postcss(processors))
 			.pipe($.rename({ suffix: '.min', prefix: '' }))
-				.pipe($.gulp.dest($.public + '/css'))
+			.pipe($.gulp.dest($.public + '/css'))
+			.pipe($.gulp.dest($.wp + '/css'))
 			.pipe($.browserSync.stream());
 	});
 

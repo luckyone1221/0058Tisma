@@ -562,7 +562,10 @@ h1, h2{
 	line-height: (20/15);
 	text-transform: uppercase;
 
-	color: $gray-720;
+	color: $gray-720!important;
+	&:hover{
+		color: $gray-900!important;
+	}
 }
 
 //
